@@ -8,16 +8,16 @@ import fs from 'fs';
 const url = 'https://www.itescam.edu.mx/portal/avisos.php';
 
 // Axios
-const response = await axios.get(url, {
-  responseType: 'arraybuffer',
-  responseEncoding: 'binary',
-});
-const body = new TextDecoder('iso-8859-1').decode(response.data);
+// const response = await axios.get(url, {
+//   responseType: 'arraybuffer',
+//   responseEncoding: 'binary',
+// });
+// const body = new TextDecoder('iso-8859-1').decode(response.data);
 
 // Fetch API
-// const response = await fetch(url);
-// const buffer = await response.arrayBuffer();
-// const body = new TextDecoder('iso-8859-1').decoder.decode(buffer);
+const response = await fetch(url);
+const buffer = await response.arrayBuffer();
+const body = new TextDecoder('iso-8859-1').decode(buffer);
 
 let $ = load(body);
 
